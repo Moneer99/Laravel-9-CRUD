@@ -82,7 +82,15 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
+        $post->update($request->all());
+
+        return redirect()->route('posts.index')
+                        ->with('success','Post updated successfully');
     }
 
     /**
