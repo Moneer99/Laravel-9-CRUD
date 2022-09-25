@@ -14,7 +14,13 @@
                 </div>
             </div>
             <div class="row mt-2">
-
+                <div class="col-lg-12">
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif
+                </div>
                 <div class="col-lg-12">
                     <table class="table table-bordered">
                         <tr>
